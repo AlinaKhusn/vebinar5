@@ -19,7 +19,20 @@
 
 
 def everything_for_your_cat(cats_data):
-    # Здесь нужно написать код
+    """
+Преобразовывает кортеж с данными о владельцах и питомцах в структкрированный вид: "владелец: питомец1, питомец2,..."
+    :param cats_data: кортеж с данными о питомцах и владельцах
+    :return: строка, содержащая владельцей и всех их питомцев
+    """
+    new_dict = {}
+    for i in range(len(cats_data)):
+        if cats_data[i][2] + ' ' + cats_data[i][3] not in new_dict:
+            new_dict[cats_data[i][2] + ' ' + cats_data[i][3]] = cats_data[i][0] + ', ' + str(cats_data[i][1])
+        else:
+            new_dict[cats_data[i][2] + ' ' + cats_data[i][3]] += '; ' + cats_data[i][0] + ', ' + str(cats_data[i][1])
+    our_str = ''
+    for i in new_dict:
+        our_str += f'{i}: {new_dict[i]}' + '\n'
     return our_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

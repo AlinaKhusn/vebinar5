@@ -7,7 +7,21 @@
 
 
 def repeats(our_str):
-    # Здесь нужно написать код
+    """
+Преобразовывает строку и добавляет к каждому символу число, равное количеству, сколько раз встречался символ
+    :param our_str: строка
+    :return: строка с добавленным количеством цифр через _
+    """
+    new_str = {}
+    new_str3 = ''
+    for i in our_str:
+        if i not in new_str:
+            new_str[i] = 1
+        else:
+            new_str[i] += 1
+        new_str2 = f'{i}_{new_str[i]}'
+        new_str3 += new_str2
+    new_str = new_str3
     return new_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
