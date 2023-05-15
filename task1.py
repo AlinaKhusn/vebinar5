@@ -7,7 +7,12 @@
 
 
 def letter_stat(our_str):
-    # Здесь нужно написать код
+    """
+Подсчитывает количество каждой буквы в слове
+    :param our_str:слово
+    :return: словарь, содержащий букву и ее количество в слове
+    """
+    letters_dict = {our_str[elem]: our_str.count(our_str[elem]) for elem in range(len(our_str))}
     return letters_dict
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
